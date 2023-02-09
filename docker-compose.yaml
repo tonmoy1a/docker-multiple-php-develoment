@@ -1,0 +1,61 @@
+version: '3'
+services: 
+  php80:
+    container_name: php80
+    build:
+      context: .
+      dockerfile: ./docker-files/PHP80.Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www/php80:/var/www/html/
+
+  php82:
+    container_name: php82
+    build:
+      context: .
+      dockerfile: ./docker-files/PHP82.Dockerfile
+    ports:
+      - "8082:80"
+    volumes:
+      - ./www/php82:/var/www/html/
+
+  php74:
+    container_name: php74
+    build:
+      context: .
+      dockerfile: ./docker-files/PHP74.Dockerfile
+    ports:
+      - "8074:80"
+    volumes:
+      - ./www/php74:/var/www/html/
+
+  mysql:
+    container_name: mysql
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 9000:80
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: root
+      UPLOAD_LIMIT: 500M
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - 9001:8080
