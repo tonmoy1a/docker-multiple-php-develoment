@@ -1,5 +1,25 @@
 version: '3'
 services: 
+  php72:
+    container_name: php72
+    build:
+      context: .
+      dockerfile: ./docker-files/PHP72.Dockerfile
+    ports:
+      - "8072:80"
+    volumes:
+      - ./www/php72:/var/www/html/
+
+  php74:
+    container_name: php74
+    build:
+      context: .
+      dockerfile: ./docker-files/PHP74.Dockerfile
+    ports:
+      - "8074:80"
+    volumes:
+      - ./www/php74:/var/www/html/
+
   php80:
     container_name: php80
     build:
@@ -19,16 +39,6 @@ services:
       - "8082:80"
     volumes:
       - ./www/php82:/var/www/html/
-
-  php74:
-    container_name: php74
-    build:
-      context: .
-      dockerfile: ./docker-files/PHP74.Dockerfile
-    ports:
-      - "8074:80"
-    volumes:
-      - ./www/php74:/var/www/html/
 
   mysql:
     container_name: mysql
