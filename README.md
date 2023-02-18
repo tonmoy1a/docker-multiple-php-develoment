@@ -20,3 +20,15 @@ docker compose up
         ├── php80                      # Docker volume for /var/www/html/ php8.0
         ├── php82                      # Docker volume for /var/www/html/ php8.2
     ├── docker-compose.yaml            # Docker compose file
+
+## Usage
+After running docker compose up put your php application file into www/php{version}. php apache server will run on port 8072, 8074, 8080, 8082
+| PHP Version | Port     |
+| :-------- | :------- |
+| `PHP 7.2` | `8072` |
+| `PHP 7.4` | `8074` |
+| `PHP 8.0` | `8080` |
+| `PHP 8.2` | `8082` |
+| `MySql` | `3306` |
+| `phpmyadmin` | `9000` |
+| `adminer` | `9001` |
