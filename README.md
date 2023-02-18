@@ -23,7 +23,7 @@ docker compose up
 
 ## Usage
 After running docker compose up put your php application file into www/php{version}. php apache server will run on port 8072, 8074, 8080, 8082
-| PHP Version | Port     |
+| Container | Port     |
 | :-------- | :------- |
 | `PHP 7.2` | `8072` |
 | `PHP 7.4` | `8074` |
