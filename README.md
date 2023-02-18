@@ -1,5 +1,11 @@
-# docker-multiple-php-develoment
-Docker enviroment for php application development
+# Docker Multiple php Develoment Enviroment
+Docker enviroment for multiple php application development. It can run multiple php version at a time. It consists of the following:
+- PHP
+- Apache
+- MySQL
+- phpMyAdmin
+- Adminer
+- composer
 
 ## Setup
 Clone or download this repository and run
