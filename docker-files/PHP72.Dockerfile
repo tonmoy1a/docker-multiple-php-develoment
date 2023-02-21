@@ -10,6 +10,12 @@ RUN apt-get install -y \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libmcrypt-dev \
+    libgd-dev \
+    jpegoptim optipng pngquant gifsicle \
     zip \
     unzip
 
