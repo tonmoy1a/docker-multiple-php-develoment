@@ -1,5 +1,15 @@
 version: '3'
-services: 
+services:
+  php56:
+    container_name: php56
+    build:
+      context: .
+      dockerfile: ./docker-files/PHP56.Dockerfile
+    ports:
+      - "8056:80"
+    volumes:
+      - ./www/php56:/var/www/html/
+      
   php72:
     container_name: php72
     build:
